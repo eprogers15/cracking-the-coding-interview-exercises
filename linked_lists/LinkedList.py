@@ -7,10 +7,13 @@ class LinkedList:
         self.tail = None
     
     def append_node(self, node):
-        current = self.head
-        while current.next != None:
-            current = current.next
-        current.next = node
+        if self.head == None:
+            self.head = node
+        else:
+            current = self.head
+            while current.next != None:
+                current = current.next
+            current.next = node
     
     def print_list(self):
         current = self.head
